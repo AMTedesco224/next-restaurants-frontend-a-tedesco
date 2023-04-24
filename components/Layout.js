@@ -1,10 +1,13 @@
 import Head from 'next/Head'
-import Link from 'next/Link'
+import {useRouter} from 'next/router'
+import Showcase from './Showcase'
 import Header from './Header'
 import Footer from './Footer'
-import styles from '../styles/Layout.module.css'
+import styles from '@/styles/Layout.module.css'
 
 export default function Layout({title, keywords, description, children}) {
+  const router = useRouter();
+
   return (
     <div>
       <Head> 
@@ -14,6 +17,7 @@ export default function Layout({title, keywords, description, children}) {
       </Head>
 
       <Header />
+      {router.pathname === '/' && <Showcase />}
 
       <div className={styles.container}>
       {children}
@@ -24,7 +28,7 @@ export default function Layout({title, keywords, description, children}) {
 }
 
 Layout.defaultProps = {
-    title: 'DJ Events | Find the hottest parties',
-    description: "All the best live music DJs and parties",
-    keywords: "Live music, DJs, Clubs"
+    title: 'Restaurant Finder | Find the best restaurants',
+    description: "All the best food and drinks in town",
+    keywords: "restaurants, food, drinks, bar"
 }

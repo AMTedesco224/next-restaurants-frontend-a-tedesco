@@ -10,12 +10,14 @@
   }
   
   .header a {
-    color: #333;
+    padding: 5px;
+    color: #737373;
     margin-right: 20px;
   }
   
   .header a:hover {
-    color: #000;
+    transition: all 1.2s;
+    color: #ff0000;
   }
   .header ul {
     display: flex;
@@ -31,7 +33,7 @@
   }
   
   .logo a {
-    color: red;
+    color: #000000;
   }
   
   @media (max-width: 768px) {
@@ -53,4 +55,8 @@
     .logo {
       margin: 20px 0;
     }
+  }
+
+  .user {
+    color: blue;
   }
